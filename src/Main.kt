@@ -1,3 +1,5 @@
+const val PI = 3.14
+
 fun main() {
     var name: String = "John Sinclair"
     var age: Int = 30
