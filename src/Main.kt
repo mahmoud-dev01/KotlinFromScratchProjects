@@ -1,17 +1,27 @@
 fun main() {
+    val x = 10
+    if (x > 0) println("x is positive") else println("x is negative")
 
-    var str: String? = "Hello, Kotlin!"
-    str = null
+    val y = -10
+    if (x > 0) {
+        println("y is positive")
+    } else {
+        println("y is negative")
+    }
 
-    // Method 1
-    val len: Int = if (str != null) str.length else -1
-    println(len)
-    // Method 2
-    val len2: Int? = str?.length
-    println(len2)
-    // Method 3
-    val len3 = str?.length ?: -1
-
-    var name: String? = "Mahmoud"
-    println(name!!.length)
+    val a = 100
+    val b = -30
+    var max: Int = 0
+    if (a > b) {
+        max = a
+        println("a is greater than b.")
+        println("max of $a and b is: $max")
+    } else if (a < b) {
+        max = b
+        println("b is greater than a.")
+        println("max of $a and b is: $max")
+    } else {
+        println("a and b have the same value: $a")
+    }
+    println(max)
 }
