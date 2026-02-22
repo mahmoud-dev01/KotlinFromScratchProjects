@@ -1,23 +1,17 @@
 fun main() {
 
-    val a = "Hello,"
-    val b = "world!"
-    var c = a + " " + b
-    println(c)
-    c = a.plus(" $b")
-    println(c.uppercase())
-    println(a.plus(" ").plus(b))
+    var str: String? = "Hello, Kotlin!"
+    str = null
 
-    val builderMessage = buildString {
-        append("Hello")
-        append(" ")
-        append("world!")
-    }
-    println(builderMessage)
+    // Method 1
+    val len: Int = if (str != null) str.length else -1
+    println(len)
+    // Method 2
+    val len2: Int? = str?.length
+    println(len2)
+    // Method 3
+    val len3 = str?.length ?: -1
 
-    val name = "John"
-    val age = 30
-    // using escape characters in string template
-    val message = "Name: $name\nAge: $age"
-    println(message)
+    var name: String? = "Mahmoud"
+    println(name!!.length)
 }
