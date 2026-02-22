@@ -1,23 +1,23 @@
 fun main() {
 
-    var resultWithParentheses = (5 + 3) * 2
-    println("Result with parentheses: $resultWithParentheses")
+    val a = "Hello,"
+    val b = "world!"
+    var c = a + " " + b
+    println(c)
+    c = a.plus(" $b")
+    println(c.uppercase())
+    println(a.plus(" ").plus(b))
 
-    resultWithParentheses += 4
-    println("Result with parentheses + 4: $resultWithParentheses")
+    val builderMessage = buildString {
+        append("Hello")
+        append(" ")
+        append("world!")
+    }
+    println(builderMessage)
 
-    var s = "Johan Smith"
-    println(s)
-    s += " Jr."
-    println("New Object: $s")
-
-    resultWithParentheses--
-    println("New Result: $resultWithParentheses")
-    println("New Result: ${resultWithParentheses++}") // 19
-    println("New Result: ${resultWithParentheses++}") // 20
-
-    println(20 == 5) // false
-    println("Hello" == "World") // false
-    println("Hello" == "Hello".lowercase()) // false
-    println("Hello" == "Hello") // ture
+    val name = "John"
+    val age = 30
+    // using escape characters in string template
+    val message = "Name: $name\nAge: $age"
+    println(message)
 }
