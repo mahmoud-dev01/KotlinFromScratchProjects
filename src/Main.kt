@@ -1,20 +1,26 @@
 fun main() {
 
-    val size: Int = 4
-    Line@ for (i in 1 .. size) {
-        Star@ for (j in 1 .. size) {
-            print("* ")
-        }
-        println()
+    var count = 0
+    while (count < 4) {
+        println("current value of count: $count")
+        count++
     }
 
-    Loop1@ for (i in 1 .. 5) {
-        Loop2@ for (j in 1 .. 5) {
-            print("$i,$j ")
-            if (i == j) {
-                println()
-                continue@Loop1
+    count = 0
+    while (true) {
+        println("play: $count")
+        when(readln().toInt()) {
+            0 -> break
+            1 -> continue
+            else -> {
+                count++
             }
         }
     }
+
+    count = 0
+    do {
+        count++
+        println(count)
+    } while (count == 1)
 }
