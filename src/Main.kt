@@ -1,28 +1,23 @@
 fun main() {
 
-    val a = 20
-    val b = 7
-    val sum = a + b
-    val difference = a - b
-    val product = a * b
+    var resultWithParentheses = (5 + 3) * 2
+    println("Result with parentheses: $resultWithParentheses")
 
+    resultWithParentheses += 4
+    println("Result with parentheses + 4: $resultWithParentheses")
 
-    val quotientFloat = 20.toFloat() / 7 // 2.8
-    val quotientInt = 20 / 7 // 2
-    println(quotientFloat)
-    println(quotientInt)
-    val result = 20 % 7
-    /* not -> 2.8
-    * 2
-    * 2
-    * 2
-    * 2
-    * 2
-    * 2
-    * 2
-    * */
-    println(result) // 6
-    val resultRev = 7 % 20
-    println(7 / 20) // 0
-    println(resultRev) // 7
+    var s = "Johan Smith"
+    println(s)
+    s += " Jr."
+    println("New Object: $s")
+
+    resultWithParentheses--
+    println("New Result: $resultWithParentheses")
+    println("New Result: ${resultWithParentheses++}") // 19
+    println("New Result: ${resultWithParentheses++}") // 20
+
+    println(20 == 5) // false
+    println("Hello" == "World") // false
+    println("Hello" == "Hello".lowercase()) // false
+    println("Hello" == "Hello") // ture
 }
