@@ -1,22 +1,15 @@
 fun main() {
 
-    applyFunctionMessage(
-        functionMessage =::printMessage,
-        input = "Hello, World!"
+    val greet: (String) -> String = { name -> "Hello $name!" }
+
+    println(greet("Alica"))
+    println(greet("Bob"))
+    println(
+        apply { name ->
+            greet(name)
+        }("Mahmoud")
     )
-    applyFunctionMessage(functionMessage = { text ->
-        printMessage(text)
-    }, input = "Hello, World!")
-
-    val result = run {
-        val x = 10
-        val y = 20
-        x + y
-    }
-    println(result)
 }
-fun printMessage(text: String): Unit =
-    println(text)
-
-fun applyFunctionMessage(functionMessage: (String) -> Unit, input: String): Unit =
-    functionMessage(input)
+fun apply(func: (String) -> String): (String) -> String {
+    return { name -> func(name) }
+}
