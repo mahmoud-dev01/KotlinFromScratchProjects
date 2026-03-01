@@ -1,18 +1,26 @@
+import java.io.File
+import java.util.Scanner
+
 fun main() {
 
-    println("Enter some text:")
-    val userInput = readln()
-    println("You entered: $userInput")
-
-    while (true) {
-        println("Enter an integer:")
-        val num = readln()
-        try {
-            val intValue = num.toInt()
-            println("You entered: $intValue")
-            break
-        } catch (e: NumberFormatException) {
-            println("Invalid input. Try again.")
+    val inputFile = File("inputfile.txt")
+    val outputFile = File("outputfile.txt")
+    try {
+        val scanner = Scanner(inputFile)
+        while (scanner.hasNextLine()) {
+            val line = scanner.nextLine()
+            println(line)
         }
+    } catch (e: Exception) {
+        println("An error occurred: ${e.message}")
     }
+   try {
+       val lines = inputFile.readLines()
+       for (line: String in lines) {
+           outputFile.appendText("$line\n")
+       }
+       println("Copied inputfile.txt to outputfile.txt")
+   } catch (e: Exception) {
+       println("An error occurred: ${e.message}")
+   }
 }
